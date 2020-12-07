@@ -1,5 +1,16 @@
-import React from "react"
+import React from 'react'
 
-export default function Home() {
-  return <div>hey there!</div>
+const IndexPage = () => {
+  
+  return (
+    <div>
+      <h1>
+        Hello, 
+      </h1>
+      <h2>
+        I am kapil from delhi,India
+      </h2>
+    </div>
+  )
 }
+export default IndexPage;
