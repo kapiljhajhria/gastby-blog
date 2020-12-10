@@ -1,17 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
-import Footer from "../components/footer"
-import Header from "./../components/header"
+import Layout from "./../components/layout"
 
 const AboutUsPage = () => {
   return (
     <div>
-      <Header />
-      <h1>This is About us page</h1>
-      <p>
-        <Link to={"/contact"}>Contact Me</Link>
-      </p>
-      <Footer />
+      <Layout>
+        <h1>This is About us page</h1>
+        <p>
+          <Link to={"/contact"}>Contact Me</Link>
+        </p>
+      </Layout>
     </div>
   )
 }
