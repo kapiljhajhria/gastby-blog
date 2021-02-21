@@ -1,16 +1,39 @@
 import React from "react"
 import Layout from "./../components/layout"
+import { useStaticQuery, graphql } from "gatsby"
 
 const BlogPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              title
+              date
+            }
+            html
+            excerpt
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <div>
       <Layout>
-        <h1>This will be a blog page.</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit ut in
-          nam praesentium nesciunt placeat culpa! Ut sunt recusandae libero, a
-          aliquam esse omnis consequuntur cum consectetur? Temporibus, id vero!
-        </p>
+        <h1>Blog</h1>
+        <ol>
+          {data.allMarkdownRemark.edges.map(edge => {
+            return (
+              <li>
+                <h2>{edge.node.frontmatter.title}</h2>
+                <p>{edge.node.frontmatter.date}</p>
+              </li>
+            )
+          })}
+        </ol>
       </Layout>
     </div>
   )
