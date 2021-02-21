@@ -1,6 +1,7 @@
 import React from "react"
 import Footer from "./footer"
 import Header from "./header"
+import "../styles/index.css"
 
 const Layout = props => {
   return (
@@ -12,4 +13,4 @@ const Layout = props => {
   )
 }
 
-export default Layout;
+export default Layout
